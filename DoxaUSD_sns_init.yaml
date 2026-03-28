@@ -64,7 +64,7 @@ name: DOXA
 # This description is used on the ICP Dashboard
 # https://dashboard.internetcomputer.org/sns
 description: >
-  Doxa used is ICP's first native USD stablecoin
+  Doxa USD is ICP's first native and yield stablecoin
 
 
 # Path to the SNS Project logo on the local filesystem. The path is relative
@@ -94,37 +94,65 @@ NnsProposal:
     # The description of the proposal. Must be a string of 10 to 2,000 bytes.
     summary: |
         ## Doxa USD SNS
-        Proposal to create the onicai SNS.
+        Proposal to create the DoxaUSD SNS.
+
+        ## Token Overview
+        * Total Token Supply (Genesis): 10,000,000 DOXA
+        * Post-Genesis Supply: 10,000,000 DOXA
+        * Inflation: None
+        * Decimals: 8
+        * Ledger Transaction Fee: 0.1 DOXA
+        * Proposal Rejection Fee: 2,000 DOXA
 
         ## Decentralization Sale Parameters
-            * Total Token Supply (Genesis): 100,000,000 DOXA
-        * Genesis Burn: 1% (Post-genesis supply: 99,000,000 DOXA)
-        * Ledger Transaction Fee: 0.001 DOXA
-        * Proposal Rejection Fee: 1,000 DOXA
-        * Minimum Participants: 100
-        * Minimum Direct Participation: 50,000 ICP
-        * Maximum Direct Participation: 100,000 ICP
-        * Minimum per Participant: 10 ICP
-        * Maximum per Participant: 15,000 ICP
+        * Minimum Participants: 10
+        * Minimum Direct Participation: 1 ICP
+        * Maximum Direct Participation: 1,000,000 ICP
+        * Minimum per Participant: 20 ICP
+        * Maximum per Participant: 20,000 ICP
         * Dissolve Delay Duration: 24 months
         * Dissolve Delay Bonus: 100%
         * Neuron Age Duration: 12 months
         * Neuron Age Bonus: 25%
-        * Initial Reward Rate: 3%
+        * Initial Reward Rate: 0% (non-inflationary — §5.4)
         * Final Reward Rate: 0%
-        * Reward Rate Transition Duration: 4 years
-        * Participant Vesting Schedule: 8 events at 3 month intervals
+        * Reward Rate: Fixed at 0% permanently — no token emissions for governance rewards
+        * Participant Vesting Schedule: 6 tranches — 10% at listing, 10% at 3M,
+          15% at 6M, 15% at 12M, 20% at 18M, 30% at 24M
         * Neurons Fund participation: No
-        ## Token Allocation at SNS Genesis
-        * Decentralization Sale: 20%
-        * Team: 7%
-        * Early Contributors: 3%
-        * Foundation: 15%
-        * Treasury (DAO-controlled): 52%
 
-        ## Additional Proposals Planned Post-Genesis
-       
-       
+        ## Token Allocation at SNS Genesis
+        * Decentralization Sale: 3%  — 300,000 DOXA
+        * Team: 3% — 300,000 DOXA (4-year vesting, 12-month cliff)
+        * Early Contributors: 1% — 100,000 DOXA (3 tranches over 12 months)
+        * Foundation: 3% — 300,000 DOXA (6-month cliff, linear over 2 years)
+        * Treasury (DAO-controlled): 90% — 9,000,000 DOXA
+
+        ## Treasury Deployment Framework (DAO-governed)
+        * Protocol-Owned Liquidity: 20%
+        * Ecosystem Grants: 5%
+        * Regional Growth: 15%
+        * Staking Yield Reserve: 10%
+        * Future Talent: 8%
+        * Security & Audits: 5%
+        * Strategic Partnerships: 15%
+        * Strategic Long-term Reserve (3-year lock): 12%
+        * Discretionary Governance Reserve: 10% (deployed by DAO vote, no pre-defined mandate)
+
+        ## ICP Raised — Protocol Commitments
+        * 50% of ICP raised locked in 8-year NNS neuron (DAO-controlled); staking rewards → DUSD staker yields
+        * 20% of ICP raised deployed as Protocol-Owned Liquidity
+        * 30% of ICP raised retained for DAO operations (treasury management, grants, expenses)
+        * All yield rewards distributed exclusively in $DOXA
+        * DAO profits periodically exchanged into $DOXA to support long-term value accrual
+
+        ## Learn more
+        * [Doxa DAO website](https://www.doxadao.org)
+        * [Doxa Whitepaper](https://docs.google.com/document/d/1oe5i-3O16yiBa1NksitPP6SsI2oeisdp0FuvwY6kj-s/edit?usp=sharing)
+        * [Doxa on OpenChat](https://oc.app/community/4opco-piaaa-aaaaf-bmytq-cai/channel/939289107/?ref=so23g-yyaaa-aaaaf-ar6rq-cai)
+        * [Doxa on X](https://x.com/doxausd)
+        * [Doxa on Telegram](https://t.me/+K_dgnBoyrwdlZDJk)
+
 
 # If the SNS launch attempt fails, control over the dapp canister(s) is given to
 # these principals. In most use cases, this is chosen to be the original set of
@@ -178,7 +206,8 @@ Token:
     symbol: DXA
 
     # SNS ledger transaction fee.
-    transaction_fee: 100_000 e8s
+    # 0.1 DOXA = 10_000_000 e8s
+    transaction_fee: 10_000_000 e8s
 
     # Path to the SNS token logo on your local filesystem. The path is relative
     # to the configuration file location, unless an absolute path is given.
@@ -254,7 +283,7 @@ Voting:
         # For example, if the user has a dissolve delay of 6 months, and
         # the maximum dissolve delay duration (defined below as `duration`)
         # for the dissolve delay bonus is 12 months, and the maximum bonus
-        # (defined as `bonus` below) is set to 10%, then that user’s voting
+        # (defined as `bonus` below) is set to 10%, then that user's voting
         # power will be 105% of their normal voting power based on staked
         # tokens (i.e. they will have a bonus of 5%). If the user increased
         # their dissolve delay to 9 months, they would get 107.5% of the normal
@@ -286,7 +315,7 @@ Voting:
         # For example, if the neuron has an age of 6 months, and the maximum age
         # duration (defined below as `duration`) for the age bonus is 12 months,
         # and the maximum bonus (defined as `bonus` below) is set to 10%, then
-        # that neuron’s voting power will be 105% of their normal voting power
+        # that neuron's voting power will be 105% of their normal voting power
         # based on staked tokens plus dissolve delay bonus (i.e. they will have a
         # bonus of 5%). If neuron aged another 3 months to have an age of 9 months,
         # the neuron would get 107.5% of the normal voting power. And if the neuron
@@ -318,7 +347,7 @@ Voting:
     # higher inflation.
     #
     # The initial and final reward rates can be set to have a higher reward rate
-    # at the launch of the SNS and a lower rate further into the SNS’s lifetime.
+    # at the launch of the SNS and a lower rate further into the SNS's lifetime.
     # The reward rate falls quadratically from the `initial` rate to the `final`
     # rate over the course of `transition_duration`.
     #
@@ -330,7 +359,10 @@ Voting:
     RewardRate:
         # The initial reward rate at which the SNS voting rewards will increase
         # per year. This field is specified as a percentage. For example: "15%".
-        initial: 4%
+        # DOXA is strictly non-inflationary (Whitepaper §5.4). Hard-capped at
+        # 10,000,000 DOXA — no new tokens minted for governance rewards.
+        # Voter incentives funded from real protocol revenue via DAO proposals.
+        initial: 0%
 
         # The final reward rate at which the SNS voting rewards will increase
         # per year. This rate is reached after `transition_duration` and remains
@@ -376,155 +408,315 @@ Distribution:
     #    dissolve_delay: 2 years
     #    vesting_period: 4 years
    Neurons:
-  # =====================================================================
-  # Developer 1: 0.4% = 400,000 tokens (80,000 per neuron)
-  # =====================================================================
+
+    # =====================================================================
+    # TEAM — 3% | 300,000 DOXA total
+    # 3 developers × 100,000 DOXA each, split into 4 neurons of 25,000
+    # Vesting: 4-year total, 12-month cliff, linear unlock over remaining 3 years
+    # Unlock schedule: month 12, 24, 36, 48
+    # dissolve_delay: 6 months (grants voting rights throughout vesting)
+    # =====================================================================
+
+    # --- Developer 1: 100,000 DOXA ---
     - principal: <PRINCIPAL_1>
-      stake: 80,000 tokens
+      stake: 25_000 tokens
       memo: 0
-      dissolve_delay: 9 months
-      vesting_period: 9 months
-    - principal: <PRINCIPAL_1>
-      stake: 80,000 tokens
-      memo: 1
-      dissolve_delay: 9 months
-      vesting_period: 12 months
-    - principal: <PRINCIPAL_1>
-      stake: 80,000 tokens
-      memo: 2
-      dissolve_delay: 9 months
-      vesting_period: 15 months
-    - principal: <PRINCIPAL_1>
-      stake: 80,000 tokens
-      memo: 3
-      dissolve_delay: 9 months
-      vesting_period: 18 months
-    - principal: <PRINCIPAL_1>
-      stake: 80,000 tokens
-      memo: 4
-      dissolve_delay: 9 months
-      vesting_period: 21 months
+      dissolve_delay: 6 months
+      vesting_period: 12 months   # cliff — nothing unlocks before this
 
-    # =====================================================================
-    # Developer 2: 2,200,000 tokens (440,000 per neuron)
-    # =====================================================================
+    - principal: <PRINCIPAL_1>
+      stake: 25_000 tokens
+      memo: 1
+      dissolve_delay: 6 months
+      vesting_period: 24 months
+
+    - principal: <PRINCIPAL_1>
+      stake: 25_000 tokens
+      memo: 2
+      dissolve_delay: 6 months
+      vesting_period: 36 months
+
+    - principal: <PRINCIPAL_1>
+      stake: 25_000 tokens
+      memo: 3
+      dissolve_delay: 6 months
+      vesting_period: 48 months   # final tranche — end of 4-year vest
+
+    # --- Developer 2: 100,000 DOXA ---
     - principal: <PRINCIPAL_2>
-      stake: 440,000 tokens
+      stake: 25_000 tokens
       memo: 0
-      dissolve_delay: 9 months
-      vesting_period: 9 months
-    - principal: <PRINCIPAL_2>
-      stake: 440,000 tokens
-      memo: 1
-      dissolve_delay: 9 months
-      vesting_period: 12 months
-    - principal: <PRINCIPAL_2>
-      stake: 440,000 tokens
-      memo: 2
-      dissolve_delay: 9 months
-      vesting_period: 15 months
-    - principal: <PRINCIPAL_2>
-      stake: 440,000 tokens
-      memo: 3
-      dissolve_delay: 9 months
-      vesting_period: 18 months
-    - principal: <PRINCIPAL_2>
-      stake: 440,000 tokens
-      memo: 4
-      dissolve_delay: 9 months
-      vesting_period: 21 months
+      dissolve_delay: 6 months
+      vesting_period: 12 months   # cliff
 
-    # =====================================================================
-    # Developer 3: 2,200,000 tokens (440,000 per neuron)
-    # =====================================================================
+    - principal: <PRINCIPAL_2>
+      stake: 25_000 tokens
+      memo: 1
+      dissolve_delay: 6 months
+      vesting_period: 24 months
+
+    - principal: <PRINCIPAL_2>
+      stake: 25_000 tokens
+      memo: 2
+      dissolve_delay: 6 months
+      vesting_period: 36 months
+
+    - principal: <PRINCIPAL_2>
+      stake: 25_000 tokens
+      memo: 3
+      dissolve_delay: 6 months
+      vesting_period: 48 months   # final tranche
+
+    # --- Developer 3: 100,000 DOXA ---
     - principal: <PRINCIPAL_3>
-      stake: 440,000 tokens
+      stake: 25_000 tokens
       memo: 0
-      dissolve_delay: 9 months
-      vesting_period: 9 months
+      dissolve_delay: 6 months
+      vesting_period: 12 months   # cliff
+
     - principal: <PRINCIPAL_3>
-      stake: 440,000 tokens
+      stake: 25_000 tokens
       memo: 1
-      dissolve_delay: 9 months
-      vesting_period: 12 months
+      dissolve_delay: 6 months
+      vesting_period: 24 months
+
     - principal: <PRINCIPAL_3>
-      stake: 440,000 tokens
+      stake: 25_000 tokens
       memo: 2
-      dissolve_delay: 9 months
-      vesting_period: 15 months
+      dissolve_delay: 6 months
+      vesting_period: 36 months
+
     - principal: <PRINCIPAL_3>
-      stake: 440,000 tokens
+      stake: 25_000 tokens
       memo: 3
-      dissolve_delay: 9 months
-      vesting_period: 18 months
-    - principal: <PRINCIPAL_3>
-      stake: 440,000 tokens
-      memo: 4
-      dissolve_delay: 9 months
-      vesting_period: 21 months
+      dissolve_delay: 6 months
+      vesting_period: 48 months   # final tranche
 
     # =====================================================================
-    # Developer 4: 2,200,000 tokens (440,000 per neuron)
+    # FOUNDATION — 3% | 300,000 DOXA total
+    # 5 neurons × 60,000 DOXA
+    # Vesting: 6-month cliff, then linear unlock over 2 years (total ~30 months)
+    # Unlock schedule: month 6, 12, 18, 24, 30
+    # dissolve_delay: 3 months (grants voting rights)
+    # Purpose: ecosystem growth, strategic initiatives, community engagement,
+    #          long-term support of DOXAUSD protocol
     # =====================================================================
-    - principal: <PRINCIPAL_4>
-      stake: 440,000 tokens
+    - principal: <PRINCIPAL_FOUNDATION>
+      stake: 60_000 tokens
       memo: 0
-      dissolve_delay: 9 months
-      vesting_period: 9 months
-    - principal: <PRINCIPAL_4>
-      stake: 440,000 tokens
+      dissolve_delay: 3 months
+      vesting_period: 6 months    # cliff
+
+    - principal: <PRINCIPAL_FOUNDATION>
+      stake: 60_000 tokens
       memo: 1
-      dissolve_delay: 9 months
+      dissolve_delay: 3 months
       vesting_period: 12 months
-    - principal: <PRINCIPAL_4>
-      stake: 440,000 tokens
+
+    - principal: <PRINCIPAL_FOUNDATION>
+      stake: 60_000 tokens
       memo: 2
-      dissolve_delay: 9 months
-      vesting_period: 15 months
-    - principal: <PRINCIPAL_4>
-      stake: 440,000 tokens
-      memo: 3
-      dissolve_delay: 9 months
+      dissolve_delay: 3 months
       vesting_period: 18 months
-    - principal: <PRINCIPAL_4>
-      stake: 440,000 tokens
+
+    - principal: <PRINCIPAL_FOUNDATION>
+      stake: 60_000 tokens
+      memo: 3
+      dissolve_delay: 3 months
+      vesting_period: 24 months
+
+    - principal: <PRINCIPAL_FOUNDATION>
+      stake: 60_000 tokens
       memo: 4
-      dissolve_delay: 9 months
-      vesting_period: 21 months
+      dissolve_delay: 3 months
+      vesting_period: 30 months   # final tranche — end of 2-year linear unlock
 
+    # =====================================================================
+    # EARLY CONTRIBUTORS — 1% | 100,000 DOXA total
+    # 8 individual contributors — unequal allocation:
+    #   2 lead contributors × 20,000 DOXA each  = 40,000 DOXA
+    #   6 contributors      × 10,000 DOXA each  = 60,000 DOXA
+    #                                    Total  = 100,000 DOXA
+    # Each person receives 3 neurons — whitepaper unlock schedule:
+    #   30% at 4 months | 30% at 8 months | 40% at 12 months
+    # No further vesting after 12 months.
+    # dissolve_delay: 1 month (minimum required to vote)
+    # =====================================================================
 
-    # The initial Doxa token balances of the various canisters.
+    # --- Lead Contributor 1: 20,000 DOXA (6,000 / 6,000 / 8,000) ---
+    - principal: <PRINCIPAL_EC_1>
+      stake: 6_000 tokens
+      memo: 0
+      dissolve_delay: 1 month
+      vesting_period: 4 months    # 30%
+    - principal: <PRINCIPAL_EC_1>
+      stake: 6_000 tokens
+      memo: 1
+      dissolve_delay: 1 month
+      vesting_period: 8 months    # 30%
+    - principal: <PRINCIPAL_EC_1>
+      stake: 8_000 tokens
+      memo: 2
+      dissolve_delay: 1 month
+      vesting_period: 12 months   # 40% — final
+
+    # --- Lead Contributor 2: 20,000 DOXA (6,000 / 6,000 / 8,000) ---
+    - principal: <PRINCIPAL_EC_2>
+      stake: 6_000 tokens
+      memo: 0
+      dissolve_delay: 1 month
+      vesting_period: 4 months
+    - principal: <PRINCIPAL_EC_2>
+      stake: 6_000 tokens
+      memo: 1
+      dissolve_delay: 1 month
+      vesting_period: 8 months
+    - principal: <PRINCIPAL_EC_2>
+      stake: 8_000 tokens
+      memo: 2
+      dissolve_delay: 1 month
+      vesting_period: 12 months
+
+    # --- Contributor 3: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+    - principal: <PRINCIPAL_EC_3>
+      stake: 3_000 tokens
+      memo: 0
+      dissolve_delay: 1 month
+      vesting_period: 4 months
+    - principal: <PRINCIPAL_EC_3>
+      stake: 3_000 tokens
+      memo: 1
+      dissolve_delay: 1 month
+      vesting_period: 8 months
+    - principal: <PRINCIPAL_EC_3>
+      stake: 4_000 tokens
+      memo: 2
+      dissolve_delay: 1 month
+      vesting_period: 12 months
+
+    # --- Contributor 4: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+    - principal: <PRINCIPAL_EC_4>
+      stake: 3_000 tokens
+      memo: 0
+      dissolve_delay: 1 month
+      vesting_period: 4 months
+    - principal: <PRINCIPAL_EC_4>
+      stake: 3_000 tokens
+      memo: 1
+      dissolve_delay: 1 month
+      vesting_period: 8 months
+    - principal: <PRINCIPAL_EC_4>
+      stake: 4_000 tokens
+      memo: 2
+      dissolve_delay: 1 month
+      vesting_period: 12 months
+
+    # --- Contributor 5: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+    - principal: <PRINCIPAL_EC_5>
+      stake: 3_000 tokens
+      memo: 0
+      dissolve_delay: 1 month
+      vesting_period: 4 months
+    - principal: <PRINCIPAL_EC_5>
+      stake: 3_000 tokens
+      memo: 1
+      dissolve_delay: 1 month
+      vesting_period: 8 months
+    - principal: <PRINCIPAL_EC_5>
+      stake: 4_000 tokens
+      memo: 2
+      dissolve_delay: 1 month
+      vesting_period: 12 months
+
+    # --- Contributor 6: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+    - principal: <PRINCIPAL_EC_6>
+      stake: 3_000 tokens
+      memo: 0
+      dissolve_delay: 1 month
+      vesting_period: 4 months
+    - principal: <PRINCIPAL_EC_6>
+      stake: 3_000 tokens
+      memo: 1
+      dissolve_delay: 1 month
+      vesting_period: 8 months
+    - principal: <PRINCIPAL_EC_6>
+      stake: 4_000 tokens
+      memo: 2
+      dissolve_delay: 1 month
+      vesting_period: 12 months
+
+    # --- Contributor 7: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+    - principal: <PRINCIPAL_EC_7>
+      stake: 3_000 tokens
+      memo: 0
+      dissolve_delay: 1 month
+      vesting_period: 4 months
+    - principal: <PRINCIPAL_EC_7>
+      stake: 3_000 tokens
+      memo: 1
+      dissolve_delay: 1 month
+      vesting_period: 8 months
+    - principal: <PRINCIPAL_EC_7>
+      stake: 4_000 tokens
+      memo: 2
+      dissolve_delay: 1 month
+      vesting_period: 12 months
+
+    # --- Contributor 8: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+    - principal: <PRINCIPAL_EC_8>
+      stake: 3_000 tokens
+      memo: 0
+      dissolve_delay: 1 month
+      vesting_period: 4 months
+    - principal: <PRINCIPAL_EC_8>
+      stake: 3_000 tokens
+      memo: 1
+      dissolve_delay: 1 month
+      vesting_period: 8 months
+    - principal: <PRINCIPAL_EC_8>
+      stake: 4_000 tokens
+      memo: 2
+      dissolve_delay: 1 month
+      vesting_period: 12 months   # final — no vesting beyond this
+
+    # The initial DOXA token balances of the various canisters.
+    # Note: Team, Foundation, and Early Contributor tokens are allocated via
+    # the Neurons section above. Only Treasury and Swap appear here.
 InitialBalances:
-  # Treasury Reserve: main account holding operational and strategic funds.
-  # 52% of 100 Million (for example total supply)
-  treasury: 52_000_000 tokens
+    # Treasury Reserve: DAO-controlled via governance proposals (90% of total supply)
+    # Deployment governed by the ratified Treasury Deployment Framework:
+    #   - Protocol-Owned Liquidity:                  20%
+    #   - Ecosystem Grants:                           5%
+    #   - Regional Growth:                           15%
+    #   - Staking Yield Reserve:                     10%
+    #   - Future Talent:                              8%
+    #   - Security & Audits:                          5%
+    #   - Strategic Partnerships:                    15%
+    #   - Strategic Long-term Reserve (3yr lock):    12%
+    #   - Discretionary Governance Reserve:          10%  ← deployed by DAO vote
+    #   Total:                                      100%
+    treasury: 9_000_000 tokens
 
-  # Swap (Decentralization Sale): tokens available for swapping or sale
-  # 20% of total supply
-  swap: 20_000_000 tokens
-
-  # Liquidity & Incentives: used for liquidity pools, staking rewards, and incentives
-  liquidity_incentives: 3_000_000 tokens
-
-  # Team allocation: 7% of total supply
-  team: 7_000_000 tokens
-
-  # Early contributors: 3% of total supply
-  early_contributors: 3_000_000 tokens
-
-  # Foundation: 15% of total supply
-  foundation: 15_000_000 tokens
+    # Swap (Decentralization Sale): 3% of total supply
+    # Vesting: 6 tranches — 10% at listing, 10% at 3M, 15% at 6M,
+    #          15% at 12M, 20% at 18M, 30% at 24M
+    # Note: SNS enforces equal-weight neuron baskets with uniform intervals;
+    # the above percentages reflect the intended economic schedule and should
+    # be communicated to participants via the project documentation.
+    swap: 300_000 tokens
 
 # Checksum of total tokens distributed
-# Team (4 developers): 7_000_000 tokens (7%)
-# Treasury Reserve: 52_000_000 tokens (52%)
-# Swap (Decentralization Sale): 20_000_000 tokens (20%)
-# Liquidity & Incentives: 3_000_000 tokens (3%)
-# Early Contributors: 3_000_000 tokens (3%)
-# Foundation: 15_000_000 tokens (15%)
-# -------------------------------------------------------
-# Total: 100_000_000 tokens (100%)
-total: 100_000_000 tokens
+# -----------------------------------------------------------------
+# Team (3 devs × 4 neurons × 25,000):                  300,000 tokens  (3%)
+# Foundation (5 neurons × 60,000):                      300,000 tokens  (3%)
+# Early Contributors:                                   100,000 tokens  (1%)
+#   2 lead contributors × 20,000 (3 neurons each)        40,000
+#   6 contributors      × 10,000 (3 neurons each)        60,000
+# Treasury Reserve:                                   9,000,000 tokens (90%)
+# Swap (Decentralization Sale):                         300,000 tokens  (3%)
+# -----------------------------------------------------------------
+# Total:                                             10,000,000 tokens (100%)
+total: 10_000_000 tokens
 
 # Configuration of the decentralization swap parameters. Choose these parameters
 # carefully, if a decentralization swap fails, the SNS will restore the dapp
@@ -536,30 +728,18 @@ Swap:
     # to the deadline or the maximum target being reached, and if there are less
     # than `minimum_participants` (here, only direct participants are counted),
     # the swap will be committed.
-    minimum_participants: 100
+    minimum_participants: 10
 
-    # Minimum amount of ICP from direct participants. This amount is required for
-    # the swap to succeed. If this amount is not achieved, the swap will be
-    # aborted (instead of committed) when the due date/time occurs.
-    # Must be smaller than or equal than `maximum_direct_participation_icp`.
-    minimum_direct_participation_icp: 50_000 tokens
+    # Minimum amount of ICP from direct participants.
+    minimum_direct_participation_icp: 1 tokens
 
-    # Maximum amount of ICP from direct participants. If this amount is achieved,
-    # the swap will finalize immediately, without waiting for the due date/time;
-    # in this case, the swap would be committed if and only if the number of
-    # direct participants (`minimum_participants`) is reached (otherwise, it
-    # would be aborted).
-    # Must be at least `min_participants * minimum_direct_participation_icp`.
-    maximum_direct_participation_icp: 1000_000 tokens
+    # Maximum amount of ICP from direct participants.
+    maximum_direct_participation_icp: 1_000_000 tokens
 
-    # The minimum amount of ICP that each participant must contribute
-    # to participate. This field is specified as a token. For instance,
-    # "1 token".
-    minimum_participant_icp: 10 tokens
+    # The minimum amount of ICP that each participant must contribute.
+    minimum_participant_icp: 20 tokens
 
-    # The maximum amount of ICP that each participant may contribute
-    # to participate. This field is specified as a token. For instance,
-    # "1 token".
+    # The maximum amount of ICP that each participant may contribute.
     maximum_participant_icp: 20_000 tokens
 
     # The text that swap participants must confirm before they may participate
@@ -603,31 +783,29 @@ Swap:
         - ZW # ZIMBABWE
 
     # Configuration of the vesting schedule of the neuron basket, i.e., the SNS
-    # neurons that a participants will receive from a successful
+    # neurons that a participant will receive from a successful
     # decentralization swap.
+    #
+    # Target vesting schedule (from whitepaper):
+    #   10% at listing (0 months)
+    #   10% at 3 months
+    #   15% at 6 months
+    #   15% at 12 months
+    #   20% at 18 months
+    #   30% at 24 months
+    #
+    # SNS enforces equal-weight neuron baskets with uniform dissolve delay
+    # intervals. The 6-event / 4-month-interval setup below is the closest
+    # on-chain approximation (dissolve delays: 0, 4, 8, 12, 16, 20 months).
+    # The intended economic percentages are communicated in documentation and
+    # the NNS proposal summary above.
     VestingSchedule:
-        # The number of events in the vesting schedule. This translates to how
-        # many neurons will be in each participant's neuron basket. Note that
-        # the first neuron in each neuron basket will have zero dissolve delay;
-        # the 2nd will have dissolve delay `interval`; if present, the 3rd will
-        # have dissolve delay `interval` × 2, etc.
-        #
-        # This value must be greater than or equal to `2`
-        # and must not exceed `10`.
-        events: 8
+        # 6 tranches matching the 6-event whitepaper schedule
+        events: 6
 
-        # The interval at which the schedule will be increased per event. The
-        # first neuron in the basket will be unlocked with zero dissolve delay.
-        # Each other neuron in the schedule will have its dissolve delay
-        # increased by `interval` compared to the previous one. For example,
-        # if `events` is set to `3` and `interval` is `1 month`, then each
-        # participant's neuron basket will have three neurons (with equal stake)
-        # with dissolve delays zero, 1 month, and 2 months. Note that the notion
-        # of `Distribution.neurons.vesting_period` applies only to developer
-        # neurons. While neuron basket neurons do not use `vesting_period`, they
-        # have a vesting schedule. This field is specified as a duration. For
-        # example: "1 month".
-        interval: 3 months
+        # 4-month uniform interval — best on-chain approximation of the
+        # non-uniform target schedule (0, 3, 6, 12, 18, 24 months)
+        interval: 4 months
 
     # Absolute time of day when the decentralization swap is supposed to start.
     #
