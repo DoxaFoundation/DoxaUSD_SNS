@@ -108,13 +108,13 @@ NnsProposal:
         * Minimum Participants: 10
         * Minimum Direct Participation: 1 ICP
         * Maximum Direct Participation: 1,000,000 ICP
-        * Minimum per Participant: 20 ICP
+        * Minimum per Participant: 10 ICP
         * Maximum per Participant: 20,000 ICP
         * Dissolve Delay Duration: 24 months
         * Dissolve Delay Bonus: 100%
         * Neuron Age Duration: 12 months
         * Neuron Age Bonus: 25%
-        * Initial Reward Rate: 0% (non-inflationary — §5.4)
+        * Initial Reward Rate: 0% (non-inflationary)
         * Final Reward Rate: 0%
         * Reward Rate: Fixed at 0% permanently — no token emissions for governance rewards
         * Participant Vesting Schedule: 6 tranches — 10% at listing, 10% at 3M,
@@ -220,7 +220,7 @@ Token:
 Proposals:
     # The cost of making an SNS proposal that is rejected by the SNS neuron
     # holders. This field is specified as a token. For example: "1 token".
-    rejection_fee: 2000 tokens
+    rejection_fee: 1000 tokens
 
     # The initial voting period of an SNS proposal. A proposal's voting period
     # may be increased during its lifecycle due to the wait-for-quiet algorithm
@@ -447,7 +447,7 @@ Distribution:
       stake: 25_000 tokens
       memo: 0
       dissolve_delay: 6 months
-      vesting_period: 12 months   # cliff
+      vesting_period: 12 months   
 
     - principal: <PRINCIPAL_2>
       stake: 25_000 tokens
@@ -465,14 +465,14 @@ Distribution:
       stake: 25_000 tokens
       memo: 3
       dissolve_delay: 6 months
-      vesting_period: 48 months   # final tranche
+      vesting_period: 48 months   
 
     # --- Developer 3: 100,000 DOXA ---
     - principal: <PRINCIPAL_3>
       stake: 25_000 tokens
       memo: 0
       dissolve_delay: 6 months
-      vesting_period: 12 months   # cliff
+      vesting_period: 12 months  
 
     - principal: <PRINCIPAL_3>
       stake: 25_000 tokens
@@ -490,7 +490,7 @@ Distribution:
       stake: 25_000 tokens
       memo: 3
       dissolve_delay: 6 months
-      vesting_period: 48 months   # final tranche
+      vesting_period: 48 months   
 
     # =====================================================================
     # FOUNDATION — 3% | 300,000 DOXA total
@@ -505,7 +505,7 @@ Distribution:
       stake: 60_000 tokens
       memo: 0
       dissolve_delay: 3 months
-      vesting_period: 6 months    # cliff
+      vesting_period: 6 months    
 
     - principal: <PRINCIPAL_FOUNDATION>
       stake: 60_000 tokens
@@ -529,7 +529,7 @@ Distribution:
       stake: 60_000 tokens
       memo: 4
       dissolve_delay: 3 months
-      vesting_period: 30 months   # final tranche — end of 2-year linear unlock
+      vesting_period: 30 months   
 
     # =====================================================================
     # EARLY CONTRIBUTORS — 1% | 100,000 DOXA total
@@ -548,17 +548,17 @@ Distribution:
       stake: 6_000 tokens
       memo: 0
       dissolve_delay: 1 month
-      vesting_period: 4 months    # 30%
+      vesting_period: 4 months    
     - principal: <PRINCIPAL_EC_1>
       stake: 6_000 tokens
       memo: 1
       dissolve_delay: 1 month
-      vesting_period: 8 months    # 30%
+      vesting_period: 8 months    
     - principal: <PRINCIPAL_EC_1>
       stake: 8_000 tokens
       memo: 2
       dissolve_delay: 1 month
-      vesting_period: 12 months   # 40% — final
+      vesting_period: 12 months   
 
     # --- Lead Contributor 2: 20,000 DOXA (6,000 / 6,000 / 8,000) ---
     - principal: <PRINCIPAL_EC_2>
@@ -677,7 +677,7 @@ Distribution:
       stake: 4_000 tokens
       memo: 2
       dissolve_delay: 1 month
-      vesting_period: 12 months   # final — no vesting beyond this
+      vesting_period: 12 months   
 
     # The initial DOXA token balances of the various canisters.
     # Note: Team, Foundation, and Early Contributor tokens are allocated via
