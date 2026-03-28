@@ -64,7 +64,7 @@ name: DOXA
 # This description is used on the ICP Dashboard
 # https://dashboard.internetcomputer.org/sns
 description: >
-  Doxa empowers cross-chain payments using DOXAUSD.
+  Doxa empowers cross-chain payments with DOXAUSD.
 
 
 # Path to the SNS Project logo on the local filesystem. The path is relative
