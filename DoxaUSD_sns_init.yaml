@@ -145,17 +145,26 @@ dapp_canisters:
     # Canisters with comment '# post-SNS' will be added afterwards via governance proposals
     #
     # ----------------------------------------
-    # Doxa
-    #
-    # Doxa  Frontend
-    - 
-    # Doxa Backend
-    - 
-    # Doxa TokenLedger
-    - 
-    # Doxa TokenIndex
-    - 
+    
+    # stablecoin_minter:
+    - modmy-byaaa-aaaag-qndgq-cai
 
+    #dusd_ledger: 
+    - irorr-5aaaa-aaaak-qddsq-cai
+
+    #utility_canister: 
+    - s2rhn-ryaaa-aaaag-qngva-cai
+
+    #frontend: 
+    - i7m4z-gqaaa-aaaak-qddtq-cai
+
+
+    #ckusdc_pool: 
+    - ieja4-4iaaa-aaaak-qddra-cai
+
+    #root_canister: 
+    - iwpxf-qyaaa-aaaak-qddsa-cai
+    
 
 # Configuration of SNS tokens in the SNS Ledger canister deployed as part
 # of the SNS.
