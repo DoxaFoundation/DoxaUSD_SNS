@@ -103,7 +103,7 @@ NnsProposal:
         * Inflation: None
         * Decimals: 8
         * Ledger Transaction Fee: 0.1 DOXA
-        * Proposal Rejection Fee: 5,000 DOXA
+        * Proposal Rejection Fee: 2,000 DOXA
 
         ## Decentralization Sale Parameters
         * Minimum Participants: 100
@@ -141,9 +141,9 @@ NnsProposal:
         * Discretionary Governance Reserve: 10% (deployed by DAO vote, no pre-defined mandate)
 
         ## ICP Raised — Protocol Commitments
-        * 50% of ICP raised locked in 8-year NNS neuron (DAO-controlled); staking rewards → DUSD staker yields
-        * 20% of ICP raised deployed as Protocol-Owned Liquidity
-        * 30% of ICP raised retained for DAO operations (treasury management, grants, expenses)
+        * 70% of ICP raised locked in 8-year NNS neuron (DAO-controlled); staking rewards → DUSD staker yields
+        * 29% of ICP raised retained for DAO operations (treasury management, grants, expenses)
+        * 1% of ICP raised will be used to help the most vulnerable and needy
         * All yield rewards distributed exclusively in $DOXA
         * DAO profits periodically exchanged into $DOXA to support long-term value accrual
 
