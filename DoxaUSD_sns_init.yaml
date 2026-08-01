@@ -64,7 +64,8 @@ name: DOXA
 # This description is used on the ICP Dashboard
 # https://dashboard.internetcomputer.org/sns
 description: >
-  Doxa empowers cross-chain payments with DOXAUSD.
+  Doxa is A Cross-Chain Stablecoin Infrastructure with DOXAUSD. 1% of the funds contributed will go to helping VULNERABLE & NEEDY People in Africa. GOD Bless You.
+
 
 
 # Path to the SNS Project logo on the local filesystem. The path is relative
@@ -102,14 +103,14 @@ NnsProposal:
         * Inflation: None
         * Decimals: 8
         * Ledger Transaction Fee: 0.1 DOXA
-        * Proposal Rejection Fee: 2,000 DOXA
+        * Proposal Rejection Fee: 5,000 DOXA
 
         ## Decentralization Sale Parameters
-        * Minimum Participants: 10
-        * Minimum Direct Participation: 1 ICP
-        * Maximum Direct Participation: 1,000,000 ICP
-        * Minimum per Participant: 10 ICP
-        * Maximum per Participant: 20,000 ICP
+        * Minimum Participants: 100
+        * Minimum Direct Participation: 50,000 ICP
+        * Maximum Direct Participation: 300,000 ICP
+        * Minimum per Participant: 25 ICP
+        * Maximum per Participant: 30,000 ICP
         * Dissolve Delay Duration: 24 months
         * Dissolve Delay Bonus: 100%
         * Neuron Age Duration: 12 months
@@ -203,7 +204,7 @@ Token:
 
     # The symbol of the token issued by the SNS Ledger.
     # Must be a string of 3 to 10 bytes without leading or trailing spaces.
-    symbol: DXA
+    symbol: DOXA
 
     # SNS ledger transaction fee.
     # 0.1 DOXA = 10_000_000 e8s
