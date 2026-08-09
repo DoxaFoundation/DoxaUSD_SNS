@@ -64,7 +64,8 @@ name: DOXA
 # This description is used on the ICP Dashboard
 # https://dashboard.internetcomputer.org/sns
 description: >
-  Doxa is A Cross-Chain Stablecoin Infrastructure with DOXAUSD. 1% of the funds contributed will go to helping VULNERABLE & NEEDY People in Africa. GOD Bless You.
+  Doxa is A Cross-Chain Stablecoin Infrastructure with DOXA USD.Built with support from Dfinity.Incubated by Perplexity and Insead AI Lab.
+  1% of the funds contributed will go to helping the most VULNERABLE & NEEDY in Africa. Thank ICP community for your support. Together we can make a difference.
 
 
 
@@ -83,7 +84,7 @@ url: https://www.doxadao.org
 # shown only in the NNS proposal.
 NnsProposal:
     # The title of the NNS proposal. Must be a string of 4 to 256 bytes.
-    title: "NNS Proposal to create a SNS named 'Doxa USD'"
+    title: "NNS Proposal to create a SNS named 'DoxaUSD(DUSD)'"
 
     # The HTTPS address of a forum post with additional context required to evaluate the NNS
     # proposal.
@@ -95,22 +96,22 @@ NnsProposal:
     # The description of the proposal. Must be a string of 10 to 2,000 bytes.
     summary: |
         ## Doxa USD SNS
-        Proposal to create the DoxaUSD SNS.
+        Proposal to create the DoxaUSD SNS (No VCs Involved).
 
         ## Token Overview
         * Total Token Supply (Genesis): 10,000,000 DOXA
         * Post-Genesis Supply: 10,000,000 DOXA
         * Inflation: None
         * Decimals: 8
-        * Ledger Transaction Fee: 0.1 DOXA
+        * Ledger Transaction Fee: 1 DOXA
         * Proposal Rejection Fee: 2,000 DOXA
 
         ## Decentralization Sale Parameters
-        * Minimum Participants: 100
-        * Minimum Direct Participation: 50,000 ICP
-        * Maximum Direct Participation: 300,000 ICP
-        * Minimum per Participant: 25 ICP
-        * Maximum per Participant: 30,000 ICP
+        * Minimum Participants: 10
+        * Minimum Direct Participation: 1 ICP
+        * Maximum Direct Participation: 1,000,000 ICP
+        * Minimum per Participant: 20 ICP
+        * Maximum per Participant: 100,000 ICP
         * Dissolve Delay Duration: 24 months
         * Dissolve Delay Bonus: 100%
         * Neuron Age Duration: 12 months
@@ -408,7 +409,7 @@ Distribution:
     #    memo: 0
     #    dissolve_delay: 2 years
     #    vesting_period: 4 years
-   Neurons:
+    Neurons:
 
     # =====================================================================
     # TEAM — 3% | 300,000 DOXA total
@@ -647,34 +648,34 @@ Distribution:
       vesting_period: 12 months
 
     # --- Contributor 7: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
-    - principal: <PRINCIPAL_EC_7>
+    - principal: n7inf-m7sly-jrxdy-atbe4-me4ap-5vxps-acc2i-wwl4t-unvpw-zch3y-sqe
       stake: 3_000 tokens
       memo: 0
       dissolve_delay: 1 month
       vesting_period: 4 months
-    - principal: <PRINCIPAL_EC_7>
+    - principal: n7inf-m7sly-jrxdy-atbe4-me4ap-5vxps-acc2i-wwl4t-unvpw-zch3y-sqe
       stake: 3_000 tokens
       memo: 1
       dissolve_delay: 1 month
       vesting_period: 8 months
-    - principal: <PRINCIPAL_EC_7>
+    - principal: n7inf-m7sly-jrxdy-atbe4-me4ap-5vxps-acc2i-wwl4t-unvpw-zch3y-sqe
       stake: 4_000 tokens
       memo: 2
       dissolve_delay: 1 month
       vesting_period: 12 months
 
     # --- Contributor 8: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
-    - principal: <PRINCIPAL_EC_8>
+    - principal: a62v4-pgx5o-bt4g5-niubz-yb7p4-wts37-zxcjy-s6kz7-7tkvi-qdauq-lqe
       stake: 3_000 tokens
       memo: 0
       dissolve_delay: 1 month
       vesting_period: 4 months
-    - principal: <PRINCIPAL_EC_8>
+    - principal: a62v4-pgx5o-bt4g5-niubz-yb7p4-wts37-zxcjy-s6kz7-7tkvi-qdauq-lqe
       stake: 3_000 tokens
       memo: 1
       dissolve_delay: 1 month
       vesting_period: 8 months
-    - principal: <PRINCIPAL_EC_8>
+    - principal: a62v4-pgx5o-bt4g5-niubz-yb7p4-wts37-zxcjy-s6kz7-7tkvi-qdauq-lqe
       stake: 4_000 tokens
       memo: 2
       dissolve_delay: 1 month
@@ -683,28 +684,28 @@ Distribution:
     # The initial DOXA token balances of the various canisters.
     # Note: Team, Foundation, and Early Contributor tokens are allocated via
     # the Neurons section above. Only Treasury and Swap appear here.
-InitialBalances:
-    # Treasury Reserve: DAO-controlled via governance proposals (90% of total supply)
-    # Deployment governed by the ratified Treasury Deployment Framework:
-    #   - Protocol-Owned Liquidity:                  20%
-    #   - Ecosystem Grants:                           5%
-    #   - Regional Growth:                           15%
-    #   - Staking Yield Reserve:                     10%
-    #   - Future Talent:                              8%
-    #   - Security & Audits:                          5%
-    #   - Strategic Partnerships:                    15%
-    #   - Strategic Long-term Reserve (3yr lock):    12%
-    #   - Discretionary Governance Reserve:          10%  ← deployed by DAO vote
-    #   Total:                                      100%
-    treasury: 9_000_000 tokens
+    InitialBalances:
+      # Treasury Reserve: DAO-controlled via governance proposals (90% of total supply)
+      # Deployment governed by the ratified Treasury Deployment Framework:
+      #   - Protocol-Owned Liquidity:                  20%
+      #   - Ecosystem Grants:                           5%
+      #   - Regional Growth:                           15%
+      #   - Staking Yield Reserve:                     10%
+      #   - Future Talent:                              8%
+      #   - Security & Audits:                          5%
+      #   - Strategic Partnerships:                    15%
+      #   - Strategic Long-term Reserve (3yr lock):    12%
+      #   - Discretionary Governance Reserve:          10%  ← deployed by DAO vote
+      #   Total:                                      100%
+      treasury: 9_000_000 tokens
 
-    # Swap (Decentralization Sale): 3% of total supply
-    # Vesting: 6 tranches — 10% at listing, 10% at 3M, 15% at 6M,
-    #          15% at 12M, 20% at 18M, 30% at 24M
-    # Note: SNS enforces equal-weight neuron baskets with uniform intervals;
-    # the above percentages reflect the intended economic schedule and should
-    # be communicated to participants via the project documentation.
-    swap: 300_000 tokens
+      # Swap (Decentralization Sale): 3% of total supply
+      # Vesting: 6 tranches — 10% at listing, 10% at 3M, 15% at 6M,
+      #          15% at 12M, 20% at 18M, 30% at 24M
+      # Note: SNS enforces equal-weight neuron baskets with uniform intervals;
+      # the above percentages reflect the intended economic schedule and should
+      # be communicated to participants via the project documentation.
+      swap: 300_000 tokens
 
 # Checksum of total tokens distributed
 # -----------------------------------------------------------------
@@ -717,7 +718,7 @@ InitialBalances:
 # Swap (Decentralization Sale):                         300,000 tokens  (3%)
 # -----------------------------------------------------------------
 # Total:                                             10,000,000 tokens (100%)
-total: 10_000_000 tokens
+    total: 10_000_000 tokens
 
 # Configuration of the decentralization swap parameters. Choose these parameters
 # carefully, if a decentralization swap fails, the SNS will restore the dapp
