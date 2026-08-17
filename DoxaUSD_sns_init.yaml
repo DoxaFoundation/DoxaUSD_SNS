@@ -94,7 +94,7 @@ NnsProposal:
     # This will go in the `url` field of the proposal.
     # Must be a string of 10 to 2,048 bytes.
     # The protocol must be HTTPS, and the domain must be forum.dfinity.org.
-    url: ""
+    url: "https://forum.dfinity.org/t/first-sns-in-2026-crosschain-stablecoin-infrastructure-with-doxausd-built-with-on-icp/74876/27"
 
     # The description of the proposal. Must be a string of 10 to 2,000 bytes.
     summary: |
@@ -165,7 +165,6 @@ NnsProposal:
 # controller(s) of the dapp. Must be a list of PrincipalIds.
 fallback_controller_principals:
     - 2bfxp-uzezm-gf5ny-ztks2-ybgzc-4dfjc-7gdhs-he2ek-vdjfk-w4yph-fqe
-    - 
 
 # The list of dapp canister(s) that will be decentralized if the
 # decentralization swap succeeds. These are defined in the form of canister IDs,
