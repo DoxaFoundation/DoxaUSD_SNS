@@ -70,8 +70,6 @@ description: >
   1% of the funds contributed will go to helping the most VULNERABLE & NEEDY in Africa. 
   Thank ICP community for your support. Together we can make a difference.
 
-
-
 # Path to the SNS Project logo on the local filesystem. The path is relative
 # to the configuration file's location, unless an absolute path is given.
 # Must have less than 341,334 bytes. The only supported format is PNG.
@@ -157,8 +155,6 @@ NnsProposal:
         * [Doxa on OpenChat](https://oc.app/community/4opco-piaaa-aaaaf-bmytq-cai/channel/939289107/?ref=so23g-yyaaa-aaaaf-ar6rq-cai)
         * [Doxa on X](https://x.com/doxausd)
         * [Doxa on Telegram](https://t.me/+K_dgnBoyrwdlZDJk)
-        
-
 
 # If the SNS launch attempt fails, control over the dapp canister(s) is given to
 # these principals. In most use cases, this is chosen to be the original set of
@@ -191,13 +187,11 @@ dapp_canisters:
     #frontend: 
     - i7m4z-gqaaa-aaaak-qddtq-cai
 
-
     #ckusdc_pool: 
     - ieja4-4iaaa-aaaak-qddra-cai
 
     #root_canister: 
     - iwpxf-qyaaa-aaaak-qddsa-cai
-    
 
 # Configuration of SNS tokens in the SNS Ledger canister deployed as part
 # of the SNS.
@@ -413,276 +407,275 @@ Distribution:
     #    dissolve_delay: 2 years
     #    vesting_period: 4 years
     Neurons:
+        # =====================================================================
+        # TEAM — 3% | 300,000 DOXA total
+        # 3 developers × 100,000 DOXA each, split into 4 neurons of 25,000
+        # Vesting: 4-year total, 12-month cliff, linear unlock over remaining 3 years
+        # Unlock schedule: month 12, 24, 36, 48
+        # dissolve_delay: 6 months (grants voting rights throughout vesting)
+        # =====================================================================
 
-    # =====================================================================
-    # TEAM — 3% | 300,000 DOXA total
-    # 3 developers × 100,000 DOXA each, split into 4 neurons of 25,000
-    # Vesting: 4-year total, 12-month cliff, linear unlock over remaining 3 years
-    # Unlock schedule: month 12, 24, 36, 48
-    # dissolve_delay: 6 months (grants voting rights throughout vesting)
-    # =====================================================================
+        # --- Developer 1: 100,000 DOXA ---
+        - principal: 7wvmt-5yhpi-psbxg-qre3x-rie4f-cxjdp-m6qeg-dtkn7-zt3up-mj5tw-cae
+          stake: 25_000 tokens
+          memo: 0
+          dissolve_delay: 6 months
+          vesting_period: 12 months   # cliff — nothing unlocks before this
 
-    # --- Developer 1: 100,000 DOXA ---
-    - principal: 7wvmt-5yhpi-psbxg-qre3x-rie4f-cxjdp-m6qeg-dtkn7-zt3up-mj5tw-cae
-      stake: 25_000 tokens
-      memo: 0
-      dissolve_delay: 6 months
-      vesting_period: 12 months   # cliff — nothing unlocks before this
+        - principal: 7wvmt-5yhpi-psbxg-qre3x-rie4f-cxjdp-m6qeg-dtkn7-zt3up-mj5tw-cae
+          stake: 25_000 tokens
+          memo: 1
+          dissolve_delay: 6 months
+          vesting_period: 24 months
 
-    - principal: 7wvmt-5yhpi-psbxg-qre3x-rie4f-cxjdp-m6qeg-dtkn7-zt3up-mj5tw-cae
-      stake: 25_000 tokens
-      memo: 1
-      dissolve_delay: 6 months
-      vesting_period: 24 months
+        - principal: 7wvmt-5yhpi-psbxg-qre3x-rie4f-cxjdp-m6qeg-dtkn7-zt3up-mj5tw-cae
+          stake: 25_000 tokens
+          memo: 2
+          dissolve_delay: 6 months
+          vesting_period: 36 months
 
-    - principal: 7wvmt-5yhpi-psbxg-qre3x-rie4f-cxjdp-m6qeg-dtkn7-zt3up-mj5tw-cae
-      stake: 25_000 tokens
-      memo: 2
-      dissolve_delay: 6 months
-      vesting_period: 36 months
+        - principal: 7wvmt-5yhpi-psbxg-qre3x-rie4f-cxjdp-m6qeg-dtkn7-zt3up-mj5tw-cae
+          stake: 25_000 tokens
+          memo: 3
+          dissolve_delay: 6 months
+          vesting_period: 48 months   # final tranche — end of 4-year vest
 
-    - principal: 7wvmt-5yhpi-psbxg-qre3x-rie4f-cxjdp-m6qeg-dtkn7-zt3up-mj5tw-cae
-      stake: 25_000 tokens
-      memo: 3
-      dissolve_delay: 6 months
-      vesting_period: 48 months   # final tranche — end of 4-year vest
+        # --- Developer 2: 100,000 DOXA ---
+        - principal: cgqbz-gw56a-u5wlk-nzfoj-h5ibh-2yy4j-fc6k6-bko4b-pup4u-bko7x-gae
+          stake: 25_000 tokens
+          memo: 0
+          dissolve_delay: 6 months
+          vesting_period: 12 months   
 
-    # --- Developer 2: 100,000 DOXA ---
-    - principal: cgqbz-gw56a-u5wlk-nzfoj-h5ibh-2yy4j-fc6k6-bko4b-pup4u-bko7x-gae
-      stake: 25_000 tokens
-      memo: 0
-      dissolve_delay: 6 months
-      vesting_period: 12 months   
+        - principal: cgqbz-gw56a-u5wlk-nzfoj-h5ibh-2yy4j-fc6k6-bko4b-pup4u-bko7x-gae
+          stake: 25_000 tokens
+          memo: 1
+          dissolve_delay: 6 months
+          vesting_period: 24 months
 
-    - principal: cgqbz-gw56a-u5wlk-nzfoj-h5ibh-2yy4j-fc6k6-bko4b-pup4u-bko7x-gae
-      stake: 25_000 tokens
-      memo: 1
-      dissolve_delay: 6 months
-      vesting_period: 24 months
+        - principal: cgqbz-gw56a-u5wlk-nzfoj-h5ibh-2yy4j-fc6k6-bko4b-pup4u-bko7x-gae
+          stake: 25_000 tokens
+          memo: 2
+          dissolve_delay: 6 months
+          vesting_period: 36 months
 
-    - principal: cgqbz-gw56a-u5wlk-nzfoj-h5ibh-2yy4j-fc6k6-bko4b-pup4u-bko7x-gae
-      stake: 25_000 tokens
-      memo: 2
-      dissolve_delay: 6 months
-      vesting_period: 36 months
+        - principal: cgqbz-gw56a-u5wlk-nzfoj-h5ibh-2yy4j-fc6k6-bko4b-pup4u-bko7x-gae
+          stake: 25_000 tokens
+          memo: 3
+          dissolve_delay: 6 months
+          vesting_period: 48 months   
 
-    - principal: cgqbz-gw56a-u5wlk-nzfoj-h5ibh-2yy4j-fc6k6-bko4b-pup4u-bko7x-gae
-      stake: 25_000 tokens
-      memo: 3
-      dissolve_delay: 6 months
-      vesting_period: 48 months   
+        # --- Developer 3: 100,000 DOXA ---
+        - principal: 7rzti-3kyap-lzwoa-neqec-hi4dt-gbw7z-pxx5o-oatqb-exuwk-wlijf-tae
+          stake: 25_000 tokens
+          memo: 0
+          dissolve_delay: 6 months
+          vesting_period: 12 months  
 
-    # --- Developer 3: 100,000 DOXA ---
-    - principal: 7rzti-3kyap-lzwoa-neqec-hi4dt-gbw7z-pxx5o-oatqb-exuwk-wlijf-tae
-      stake: 25_000 tokens
-      memo: 0
-      dissolve_delay: 6 months
-      vesting_period: 12 months  
+        - principal: 7rzti-3kyap-lzwoa-neqec-hi4dt-gbw7z-pxx5o-oatqb-exuwk-wlijf-tae
+          stake: 25_000 tokens
+          memo: 1
+          dissolve_delay: 6 months
+          vesting_period: 24 months
 
-    - principal: 7rzti-3kyap-lzwoa-neqec-hi4dt-gbw7z-pxx5o-oatqb-exuwk-wlijf-tae
-      stake: 25_000 tokens
-      memo: 1
-      dissolve_delay: 6 months
-      vesting_period: 24 months
+        - principal: 7rzti-3kyap-lzwoa-neqec-hi4dt-gbw7z-pxx5o-oatqb-exuwk-wlijf-tae
+          stake: 25_000 tokens
+          memo: 2
+          dissolve_delay: 6 months
+          vesting_period: 36 months
 
-    - principal: 7rzti-3kyap-lzwoa-neqec-hi4dt-gbw7z-pxx5o-oatqb-exuwk-wlijf-tae
-      stake: 25_000 tokens
-      memo: 2
-      dissolve_delay: 6 months
-      vesting_period: 36 months
+        - principal: 7rzti-3kyap-lzwoa-neqec-hi4dt-gbw7z-pxx5o-oatqb-exuwk-wlijf-tae
+          stake: 25_000 tokens
+          memo: 3
+          dissolve_delay: 6 months
+          vesting_period: 48 months   
 
-    - principal: 7rzti-3kyap-lzwoa-neqec-hi4dt-gbw7z-pxx5o-oatqb-exuwk-wlijf-tae
-      stake: 25_000 tokens
-      memo: 3
-      dissolve_delay: 6 months
-      vesting_period: 48 months   
+        # =====================================================================
+        # FOUNDATION — 3% | 300,000 DOXA total
+        # 5 neurons × 60,000 DOXA
+        # Vesting: 6-month cliff, then linear unlock over 2 years (total ~30 months)
+        # Unlock schedule: month 6, 12, 18, 24, 30
+        # dissolve_delay: 3 months (grants voting rights)
+        # Purpose: ecosystem growth, strategic initiatives, community engagement,
+        #          long-term support of DOXAUSD protocol
+        # =====================================================================
+        - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
+          stake: 60_000 tokens
+          memo: 0
+          dissolve_delay: 3 months
+          vesting_period: 6 months    
 
-    # =====================================================================
-    # FOUNDATION — 3% | 300,000 DOXA total
-    # 5 neurons × 60,000 DOXA
-    # Vesting: 6-month cliff, then linear unlock over 2 years (total ~30 months)
-    # Unlock schedule: month 6, 12, 18, 24, 30
-    # dissolve_delay: 3 months (grants voting rights)
-    # Purpose: ecosystem growth, strategic initiatives, community engagement,
-    #          long-term support of DOXAUSD protocol
-    # =====================================================================
-    - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
-      stake: 60_000 tokens
-      memo: 0
-      dissolve_delay: 3 months
-      vesting_period: 6 months    
+        - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
+          stake: 60_000 tokens
+          memo: 1
+          dissolve_delay: 3 months
+          vesting_period: 12 months
 
-    - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
-      stake: 60_000 tokens
-      memo: 1
-      dissolve_delay: 3 months
-      vesting_period: 12 months
+        - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
+          stake: 60_000 tokens
+          memo: 2
+          dissolve_delay: 3 months
+          vesting_period: 18 months
 
-    - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
-      stake: 60_000 tokens
-      memo: 2
-      dissolve_delay: 3 months
-      vesting_period: 18 months
+        - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
+          stake: 60_000 tokens
+          memo: 3
+          dissolve_delay: 3 months
+          vesting_period: 24 months
 
-    - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
-      stake: 60_000 tokens
-      memo: 3
-      dissolve_delay: 3 months
-      vesting_period: 24 months
+        - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
+          stake: 60_000 tokens
+          memo: 4
+          dissolve_delay: 3 months
+          vesting_period: 30 months   
 
-    - principal: 6ndpq-elvax-piya4-k5kbt-xs5i7-gvgfu-qoh3a-ns22b-l4yd6-lig3t-xqe
-      stake: 60_000 tokens
-      memo: 4
-      dissolve_delay: 3 months
-      vesting_period: 30 months   
+        # =====================================================================
+        # EARLY CONTRIBUTORS — 1% | 100,000 DOXA total
+        # 8 individual contributors — unequal allocation:
+        #   2 lead contributors × 20,000 DOXA each  = 40,000 DOXA
+        #   6 contributors      × 10,000 DOXA each  = 60,000 DOXA
+        #                                    Total  = 100,000 DOXA
+        # Each person receives 3 neurons — whitepaper unlock schedule:
+        #   30% at 4 months | 30% at 8 months | 40% at 12 months
+        # No further vesting after 12 months.
+        # dissolve_delay: 1 month (minimum required to vote)
+        # =====================================================================
 
-    # =====================================================================
-    # EARLY CONTRIBUTORS — 1% | 100,000 DOXA total
-    # 8 individual contributors — unequal allocation:
-    #   2 lead contributors × 20,000 DOXA each  = 40,000 DOXA
-    #   6 contributors      × 10,000 DOXA each  = 60,000 DOXA
-    #                                    Total  = 100,000 DOXA
-    # Each person receives 3 neurons — whitepaper unlock schedule:
-    #   30% at 4 months | 30% at 8 months | 40% at 12 months
-    # No further vesting after 12 months.
-    # dissolve_delay: 1 month (minimum required to vote)
-    # =====================================================================
+        # --- Lead Contributor 1: 20,000 DOXA (6,000 / 6,000 / 8,000) ---
+        - principal: 2pv6u-qqmyr-z4pvk-7f2n6-ro3e2-ytreq-65a3d-p4bt6-v7ixj-bmavc-7ae
+          stake: 6_000 tokens
+          memo: 0
+          dissolve_delay: 1 month
+          vesting_period: 4 months    
+        - principal: 2pv6u-qqmyr-z4pvk-7f2n6-ro3e2-ytreq-65a3d-p4bt6-v7ixj-bmavc-7ae
+          stake: 6_000 tokens
+          memo: 1
+          dissolve_delay: 1 month
+          vesting_period: 8 months    
+        - principal: 2pv6u-qqmyr-z4pvk-7f2n6-ro3e2-ytreq-65a3d-p4bt6-v7ixj-bmavc-7ae
+          stake: 8_000 tokens
+          memo: 2
+          dissolve_delay: 1 month
+          vesting_period: 12 months   
 
-    # --- Lead Contributor 1: 20,000 DOXA (6,000 / 6,000 / 8,000) ---
-    - principal: 2pv6u-qqmyr-z4pvk-7f2n6-ro3e2-ytreq-65a3d-p4bt6-v7ixj-bmavc-7ae
-      stake: 6_000 tokens
-      memo: 0
-      dissolve_delay: 1 month
-      vesting_period: 4 months    
-    - principal: 2pv6u-qqmyr-z4pvk-7f2n6-ro3e2-ytreq-65a3d-p4bt6-v7ixj-bmavc-7ae
-      stake: 6_000 tokens
-      memo: 1
-      dissolve_delay: 1 month
-      vesting_period: 8 months    
-    - principal: 2pv6u-qqmyr-z4pvk-7f2n6-ro3e2-ytreq-65a3d-p4bt6-v7ixj-bmavc-7ae
-      stake: 8_000 tokens
-      memo: 2
-      dissolve_delay: 1 month
-      vesting_period: 12 months   
+        # --- Lead Contributor 2: 20,000 DOXA (6,000 / 6,000 / 8,000) ---
+        - principal: dmsvp-tflnf-7fwzz-gys22-hlxtk-l5feo-mirwd-lkenk-lufbz-ad2x4-mqe
+          stake: 6_000 tokens
+          memo: 0
+          dissolve_delay: 1 month
+          vesting_period: 4 months
+        - principal: dmsvp-tflnf-7fwzz-gys22-hlxtk-l5feo-mirwd-lkenk-lufbz-ad2x4-mqe
+          stake: 6_000 tokens
+          memo: 1
+          dissolve_delay: 1 month
+          vesting_period: 8 months
+        - principal: dmsvp-tflnf-7fwzz-gys22-hlxtk-l5feo-mirwd-lkenk-lufbz-ad2x4-mqe
+          stake: 8_000 tokens
+          memo: 2
+          dissolve_delay: 1 month
+          vesting_period: 12 months
 
-    # --- Lead Contributor 2: 20,000 DOXA (6,000 / 6,000 / 8,000) ---
-    - principal: dmsvp-tflnf-7fwzz-gys22-hlxtk-l5feo-mirwd-lkenk-lufbz-ad2x4-mqe
-      stake: 6_000 tokens
-      memo: 0
-      dissolve_delay: 1 month
-      vesting_period: 4 months
-    - principal: dmsvp-tflnf-7fwzz-gys22-hlxtk-l5feo-mirwd-lkenk-lufbz-ad2x4-mqe
-      stake: 6_000 tokens
-      memo: 1
-      dissolve_delay: 1 month
-      vesting_period: 8 months
-    - principal: dmsvp-tflnf-7fwzz-gys22-hlxtk-l5feo-mirwd-lkenk-lufbz-ad2x4-mqe
-      stake: 8_000 tokens
-      memo: 2
-      dissolve_delay: 1 month
-      vesting_period: 12 months
+        # --- Contributor 3: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+        - principal: m4z36-n4d5l-65yzy-jkw4e-6lgua-2iln3-bl6ds-552ik-ox3ep-su2kw-aqe
+          stake: 3_000 tokens
+          memo: 0
+          dissolve_delay: 1 month
+          vesting_period: 4 months
+        - principal: m4z36-n4d5l-65yzy-jkw4e-6lgua-2iln3-bl6ds-552ik-ox3ep-su2kw-aqe
+          stake: 3_000 tokens
+          memo: 1
+          dissolve_delay: 1 month
+          vesting_period: 8 months
+        - principal: m4z36-n4d5l-65yzy-jkw4e-6lgua-2iln3-bl6ds-552ik-ox3ep-su2kw-aqe
+          stake: 4_000 tokens
+          memo: 2
+          dissolve_delay: 1 month
+          vesting_period: 12 months
 
-    # --- Contributor 3: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
-    - principal: m4z36-n4d5l-65yzy-jkw4e-6lgua-2iln3-bl6ds-552ik-ox3ep-su2kw-aqe
-      stake: 3_000 tokens
-      memo: 0
-      dissolve_delay: 1 month
-      vesting_period: 4 months
-    - principal: m4z36-n4d5l-65yzy-jkw4e-6lgua-2iln3-bl6ds-552ik-ox3ep-su2kw-aqe
-      stake: 3_000 tokens
-      memo: 1
-      dissolve_delay: 1 month
-      vesting_period: 8 months
-    - principal: m4z36-n4d5l-65yzy-jkw4e-6lgua-2iln3-bl6ds-552ik-ox3ep-su2kw-aqe
-      stake: 4_000 tokens
-      memo: 2
-      dissolve_delay: 1 month
-      vesting_period: 12 months
+        # --- Contributor 4: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+        - principal: zzoda-w3iaq-43kla-63fls-jdmyg-66du7-il7nh-ygf23-5h34a-tqk7t-cae 
+          stake: 3_000 tokens
+          memo: 0
+          dissolve_delay: 1 month
+          vesting_period: 4 months
+        - principal: zzoda-w3iaq-43kla-63fls-jdmyg-66du7-il7nh-ygf23-5h34a-tqk7t-cae 
+          stake: 3_000 tokens
+          memo: 1
+          dissolve_delay: 1 month
+          vesting_period: 8 months
+        - principal: zzoda-w3iaq-43kla-63fls-jdmyg-66du7-il7nh-ygf23-5h34a-tqk7t-cae 
+          stake: 4_000 tokens
+          memo: 2
+          dissolve_delay: 1 month
+          vesting_period: 12 months
 
-    # --- Contributor 4: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
-    - principal: zzoda-w3iaq-43kla-63fls-jdmyg-66du7-il7nh-ygf23-5h34a-tqk7t-cae 
-      stake: 3_000 tokens
-      memo: 0
-      dissolve_delay: 1 month
-      vesting_period: 4 months
-    - principal: zzoda-w3iaq-43kla-63fls-jdmyg-66du7-il7nh-ygf23-5h34a-tqk7t-cae 
-      stake: 3_000 tokens
-      memo: 1
-      dissolve_delay: 1 month
-      vesting_period: 8 months
-    - principal: zzoda-w3iaq-43kla-63fls-jdmyg-66du7-il7nh-ygf23-5h34a-tqk7t-cae 
-      stake: 4_000 tokens
-      memo: 2
-      dissolve_delay: 1 month
-      vesting_period: 12 months
+        # --- Contributor 5: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+        - principal: tsnp2-6w5qh-k6uol-nj42s-tz5il-6l3lp-xxqla-sfxmt-47ndd-r2avr-eae
+          stake: 3_000 tokens
+          memo: 0
+          dissolve_delay: 1 month
+          vesting_period: 4 months
+        - principal: tsnp2-6w5qh-k6uol-nj42s-tz5il-6l3lp-xxqla-sfxmt-47ndd-r2avr-eae
+          stake: 3_000 tokens
+          memo: 1
+          dissolve_delay: 1 month
+          vesting_period: 8 months
+        - principal: tsnp2-6w5qh-k6uol-nj42s-tz5il-6l3lp-xxqla-sfxmt-47ndd-r2avr-eae
+          stake: 4_000 tokens
+          memo: 2
+          dissolve_delay: 1 month
+          vesting_period: 12 months
 
-    # --- Contributor 5: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
-    - principal: tsnp2-6w5qh-k6uol-nj42s-tz5il-6l3lp-xxqla-sfxmt-47ndd-r2avr-eae
-      stake: 3_000 tokens
-      memo: 0
-      dissolve_delay: 1 month
-      vesting_period: 4 months
-    - principal: tsnp2-6w5qh-k6uol-nj42s-tz5il-6l3lp-xxqla-sfxmt-47ndd-r2avr-eae
-      stake: 3_000 tokens
-      memo: 1
-      dissolve_delay: 1 month
-      vesting_period: 8 months
-    - principal: tsnp2-6w5qh-k6uol-nj42s-tz5il-6l3lp-xxqla-sfxmt-47ndd-r2avr-eae
-      stake: 4_000 tokens
-      memo: 2
-      dissolve_delay: 1 month
-      vesting_period: 12 months
+        # --- Contributor 6: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+        - principal: 5tp7n-d2bij-ylvce-qf2xb-wsnfr-dh7nu-omcw5-f3z2f-433nu-dztcf-vae
+          stake: 3_000 tokens
+          memo: 0
+          dissolve_delay: 1 month
+          vesting_period: 4 months
+        - principal: 5tp7n-d2bij-ylvce-qf2xb-wsnfr-dh7nu-omcw5-f3z2f-433nu-dztcf-vae
+          stake: 3_000 tokens
+          memo: 1
+          dissolve_delay: 1 month
+          vesting_period: 8 months
+        - principal: 5tp7n-d2bij-ylvce-qf2xb-wsnfr-dh7nu-omcw5-f3z2f-433nu-dztcf-vae
+          stake: 4_000 tokens
+          memo: 2
+          dissolve_delay: 1 month
+          vesting_period: 12 months
 
-    # --- Contributor 6: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
-    - principal: 5tp7n-d2bij-ylvce-qf2xb-wsnfr-dh7nu-omcw5-f3z2f-433nu-dztcf-vae
-      stake: 3_000 tokens
-      memo: 0
-      dissolve_delay: 1 month
-      vesting_period: 4 months
-    - principal: 5tp7n-d2bij-ylvce-qf2xb-wsnfr-dh7nu-omcw5-f3z2f-433nu-dztcf-vae
-      stake: 3_000 tokens
-      memo: 1
-      dissolve_delay: 1 month
-      vesting_period: 8 months
-    - principal: 5tp7n-d2bij-ylvce-qf2xb-wsnfr-dh7nu-omcw5-f3z2f-433nu-dztcf-vae
-      stake: 4_000 tokens
-      memo: 2
-      dissolve_delay: 1 month
-      vesting_period: 12 months
+        # --- Contributor 7: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+        - principal: n7inf-m7sly-jrxdy-atbe4-me4ap-5vxps-acc2i-wwl4t-unvpw-zch3y-sqe
+          stake: 3_000 tokens
+          memo: 0
+          dissolve_delay: 1 month
+          vesting_period: 4 months
+        - principal: n7inf-m7sly-jrxdy-atbe4-me4ap-5vxps-acc2i-wwl4t-unvpw-zch3y-sqe
+          stake: 3_000 tokens
+          memo: 1
+          dissolve_delay: 1 month
+          vesting_period: 8 months
+        - principal: n7inf-m7sly-jrxdy-atbe4-me4ap-5vxps-acc2i-wwl4t-unvpw-zch3y-sqe
+          stake: 4_000 tokens
+          memo: 2
+          dissolve_delay: 1 month
+          vesting_period: 12 months
 
-    # --- Contributor 7: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
-    - principal: n7inf-m7sly-jrxdy-atbe4-me4ap-5vxps-acc2i-wwl4t-unvpw-zch3y-sqe
-      stake: 3_000 tokens
-      memo: 0
-      dissolve_delay: 1 month
-      vesting_period: 4 months
-    - principal: n7inf-m7sly-jrxdy-atbe4-me4ap-5vxps-acc2i-wwl4t-unvpw-zch3y-sqe
-      stake: 3_000 tokens
-      memo: 1
-      dissolve_delay: 1 month
-      vesting_period: 8 months
-    - principal: n7inf-m7sly-jrxdy-atbe4-me4ap-5vxps-acc2i-wwl4t-unvpw-zch3y-sqe
-      stake: 4_000 tokens
-      memo: 2
-      dissolve_delay: 1 month
-      vesting_period: 12 months
-
-    # --- Contributor 8: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
-    - principal: a62v4-pgx5o-bt4g5-niubz-yb7p4-wts37-zxcjy-s6kz7-7tkvi-qdauq-lqe
-      stake: 3_000 tokens
-      memo: 0
-      dissolve_delay: 1 month
-      vesting_period: 4 months
-    - principal: a62v4-pgx5o-bt4g5-niubz-yb7p4-wts37-zxcjy-s6kz7-7tkvi-qdauq-lqe
-      stake: 3_000 tokens
-      memo: 1
-      dissolve_delay: 1 month
-      vesting_period: 8 months
-    - principal: a62v4-pgx5o-bt4g5-niubz-yb7p4-wts37-zxcjy-s6kz7-7tkvi-qdauq-lqe
-      stake: 4_000 tokens
-      memo: 2
-      dissolve_delay: 1 month
-      vesting_period: 12 months   
+        # --- Contributor 8: 10,000 DOXA (3,000 / 3,000 / 4,000) ---
+        - principal: a62v4-pgx5o-bt4g5-niubz-yb7p4-wts37-zxcjy-s6kz7-7tkvi-qdauq-lqe
+          stake: 3_000 tokens
+          memo: 0
+          dissolve_delay: 1 month
+          vesting_period: 4 months
+        - principal: a62v4-pgx5o-bt4g5-niubz-yb7p4-wts37-zxcjy-s6kz7-7tkvi-qdauq-lqe
+          stake: 3_000 tokens
+          memo: 1
+          dissolve_delay: 1 month
+          vesting_period: 8 months
+        - principal: a62v4-pgx5o-bt4g5-niubz-yb7p4-wts37-zxcjy-s6kz7-7tkvi-qdauq-lqe
+          stake: 4_000 tokens
+          memo: 2
+          dissolve_delay: 1 month
+          vesting_period: 12 months   
 
     # The initial DOXA token balances of the various canisters.
     # Note: Team, Foundation, and Early Contributor tokens are allocated via
@@ -836,7 +829,7 @@ Swap:
     #   the CreateServiceNervousSystem proposal is executed. This facilitates
     #   testing in an accelerated manner.
     #
-    start_time: 16:00 UTC  # Intentionally commented out for testing.
+    start_time: "16:00 UTC"  # Intentionally commented out for testing.
 
     # The duration of the decentralization swap. When `start_time` is calculated
     # during CreateServiceNervousSystem proposal execution, this `duration` will
