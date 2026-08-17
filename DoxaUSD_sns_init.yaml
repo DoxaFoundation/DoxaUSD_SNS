@@ -164,7 +164,7 @@ NnsProposal:
 # these principals. In most use cases, this is chosen to be the original set of
 # controller(s) of the dapp. Must be a list of PrincipalIds.
 fallback_controller_principals:
-    - 
+    -2bfxp-uzezm-gf5ny-ztks2-ybgzc-4dfjc-7gdhs-he2ek-vdjfk-w4yph-fqe
     - 
 
 # The list of dapp canister(s) that will be decentralized if the
